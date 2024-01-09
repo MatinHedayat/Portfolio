@@ -6,7 +6,7 @@ import { FaHistory } from 'react-icons/fa';
 import { GrStorage } from 'react-icons/gr';
 
 export const menu = [
-  { title: 'Home', icon: <FiHome />, path: '/' },
+  { title: 'Home', icon: <FiHome />, path: '/launcher' },
   { title: 'Hint', icon: <IoMdHelpCircleOutline />, path: '/hint' },
   { title: 'Categories', icon: <BiCategoryAlt />, path: '/categories' },
   { title: 'Setting', icon: <IoMdSettings />, path: '/setting' },

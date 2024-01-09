@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Page from '../../components/quiz/Page';
-import { useDispatch, useSelector } from 'react-redux';
+import useGeneralTimer from '../../hooks/quiz/useGeneralTimer';
 import useFetchData from '../../hooks/quiz/useFetchData';
 import { updateMatchData } from '../../features/quiz/matchDataSlice';
-import useGeneralTimer from '../../hooks/quiz/useGeneralTimer';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Questions() {
   const matchData = useSelector((state) => state.matchData);

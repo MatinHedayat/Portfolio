@@ -64,7 +64,7 @@ export default function Weather() {
         alt='background'
       />
 
-      <div className='max-w-3xl mx-auto px-6 py-12 flex flex-col items-center gap-y-12'>
+      <div className='max-w-3xl mx-auto px-6 py-12 font-outfit flex flex-col items-center gap-y-12'>
         <form
           className='w-full flex justify-between backdrop-blur-sm overflow-hidden border-2 border-white/20 rounded-3xl'
           onSubmit={handleSubmit}

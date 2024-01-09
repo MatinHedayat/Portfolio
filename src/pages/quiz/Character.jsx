@@ -1,6 +1,7 @@
 import Page from '../../components/quiz/Page';
-import { useEffect, useState } from 'react';
 import avatarList from '../../data/quiz/avatarList';
+
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdOutlineVerifiedUser } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';

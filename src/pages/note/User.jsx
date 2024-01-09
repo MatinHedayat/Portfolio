@@ -1,11 +1,15 @@
-import { useState } from "react";
-import characters from "../data/characters";
-import { useNavigate } from "react-router-dom";
-import { useSetUserContext, useUserContext } from "../contexts/UserProvider";
-import Menu from "../components/Menu";
-import { HiMenuAlt2 } from "react-icons/hi";
-import { BiLeftArrowAlt } from "react-icons/bi";
-import { motion } from "framer-motion";
+import characters from '../../data/note/characters';
+import {
+  useSetUserContext,
+  useUserContext,
+} from '../../contexts/note/UserProvider';
+import Menu from '../../components/note/Menu';
+
+import { HiMenuAlt2 } from 'react-icons/hi';
+import { BiLeftArrowAlt } from 'react-icons/bi';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function User() {
   const user = useUserContext();
@@ -23,18 +27,18 @@ export default function User() {
     if (!name) return;
 
     login(name, family, character);
-    navigate("/");
+    navigate('/note-list');
   };
 
   const handleLogoutUser = () => {
     logout();
-    navigate("/");
+    navigate('/note-list');
   };
 
   return (
     <motion.div
-      className='page'
-      initial={{ opacity: 0, y: "-10%" }}
+      className='note-page'
+      initial={{ opacity: 0, y: '-10%' }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
@@ -60,8 +64,8 @@ export default function User() {
           <button
             className={`w-12 h-12 flex items-center justify-center rounded-full overflow-hidden transition-all ${
               character === char
-                ? "outline-2 outline-slate-800 outline-offset-4 dark:outline-aliceblue/80"
-                : ""
+                ? 'outline outline-2 outline-slate-800 outline-offset-4 dark:outline-aliceblue/80'
+                : ''
             } sm:w-16 sm:h-16`}
             key={char}
             onClick={() => setCharacter(char)}

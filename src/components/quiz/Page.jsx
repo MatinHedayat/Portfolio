@@ -18,7 +18,7 @@ export default function Page({
 
   return (
     <motion.div
-      className='page'
+      className='quiz-page'
       initial={{ opacity: 0, transform: 'translateY(-1rem)' }}
       animate={{ opacity: 1, transform: 'translateY(0)' }}
     >

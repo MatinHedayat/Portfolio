@@ -5,7 +5,7 @@ const SetUserContext = createContext();
 const initialState = JSON.parse(localStorage.getItem("user")) || {
   name: "",
   family: "",
-  character: "images/avatars/1.jpg",
+  character: "avatars/1.jpg",
 };
 
 export default function UserProvider({ children }) {
@@ -16,7 +16,7 @@ export default function UserProvider({ children }) {
   const login = (name, family, character) =>
     setUser({ name, family, character });
   const logout = () =>
-    setUser({ name: "", family: "", character: "images/avatars/1.jpg" });
+    setUser({ name: "", family: "", character: "avatars/1.jpg" });
 
   return (
     <UserContext.Provider value={user}>

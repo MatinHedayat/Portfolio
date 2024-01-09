@@ -1,12 +1,13 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { CgComment } from 'react-icons/cg';
-import { motion } from 'framer-motion';
 import useTheme from '../../hooks/quiz/useTheme';
 import MatchHistory from '../../components/quiz/MatchHistory';
-import { useDispatch, useSelector } from 'react-redux';
 import useLocalStorage from '../../hooks/quiz/useLocalStorage';
-import { useEffect } from 'react';
 import { addHistory } from '../../features/quiz/historySlice';
+
+import { useNavigate } from 'react-router-dom';
+import { CgComment } from 'react-icons/cg';
+import { motion } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 export default function Result() {
   const matchData = useSelector((state) => state.matchData);
@@ -93,7 +94,7 @@ export default function Result() {
     <>
       <div>
         <motion.div
-          className='page'
+          className='quiz-page'
           initial={{ opacity: 0, transform: 'translateY(-1rem)' }}
           animate={{ opacity: 1, transform: 'translateY(0)' }}
         >

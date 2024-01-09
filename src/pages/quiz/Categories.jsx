@@ -1,5 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
 import Page from '../../components/quiz/Page';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { PiSelectionBackgroundBold } from 'react-icons/pi';
 import { changeCategories } from '../../features/quiz/settingSlice';
 

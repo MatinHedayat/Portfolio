@@ -4,7 +4,8 @@ export default {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      sans: ['Poppins'],
+      poppins: ['Poppins', 'sans-serif'],
+      outfit: ['Outfit', 'sans-serif'],
     },
     extend: {
       colors: {

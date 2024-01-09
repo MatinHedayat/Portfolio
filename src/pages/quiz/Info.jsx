@@ -1,4 +1,5 @@
 import Page from '../../components/quiz/Page';
+
 import { BiCategoryAlt } from 'react-icons/bi';
 import { PiStepsFill } from 'react-icons/pi';
 import { FaHistory } from 'react-icons/fa';

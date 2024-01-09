@@ -1,17 +1,18 @@
-import { HiMenuAlt2 } from "react-icons/hi";
-import { FaRegUserCircle } from "react-icons/fa";
-import { useState } from "react";
+import { useUserContext } from '../../contexts/note/UserProvider';
+import { useNotesContext } from '../../contexts/note/NotesProvider';
+import NoteItem from '../../components/note/NoteItem';
+import BackToTopBtn from '../../components/note/BackToTopBtn';
+import Menu from '../../components/note/Menu';
+
+import { HiMenuAlt2 } from 'react-icons/hi';
+import { FaRegUserCircle } from 'react-icons/fa';
 import {
   TbSortAscendingLetters,
   TbSortDescendingLetters,
-} from "react-icons/tb";
-import { Link } from "react-router-dom";
-import { useNotesContext } from "../contexts/NotesProvider";
-import NoteItem from "../components/NoteItem";
-import BackToTopBtn from "../components/BackToTopBtn";
-import Menu from "../components/Menu";
-import { useUserContext } from "../contexts/UserProvider";
-import { motion } from "framer-motion";
+} from 'react-icons/tb';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Bookmarks() {
   const notes = useNotesContext().filter((note) => note.isMarked);
@@ -20,7 +21,7 @@ export default function Bookmarks() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleCloseMenu = () => setIsMenuOpen(false);
 
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const [sortIsEarliest, setSortIsEarliest] = useState(true);
 
@@ -33,8 +34,8 @@ export default function Bookmarks() {
   return (
     <>
       <motion.div
-        className='page mb-12'
-        initial={{ opacity: 0, y: "-10%" }}
+        className='note-page mb-12'
+        initial={{ opacity: 0, y: '-10%' }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
@@ -64,13 +65,13 @@ export default function Bookmarks() {
               {sortIsEarliest ? (
                 <TbSortAscendingLetters
                   className={`text-2xl text-aliceblue ${
-                    sortIsEarliest ? "animate-rotateOpacity" : ""
+                    sortIsEarliest ? 'animate-rotateOpacity' : ''
                   }`}
                 />
               ) : (
                 <TbSortDescendingLetters
                   className={`text-2xl text-aliceblue ${
-                    sortIsEarliest ? "" : "animate-rotateOpacity"
+                    sortIsEarliest ? '' : 'animate-rotateOpacity'
                   }`}
                 />
               )}
@@ -95,7 +96,7 @@ export default function Bookmarks() {
         <div className='flex flex-col gap-y-6 mt-8 sm:items-center'>
           {notes
             .filter((note) =>
-              searchValue === ""
+              searchValue === ''
                 ? note
                 : note.title.toLowerCase().includes(searchValue) ||
                   note.desc.toLowerCase().includes(searchValue)

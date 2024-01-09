@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import useOutsideFocus from '../../hooks/useOutsideFocus';
-import menuItems from '../../data/note/menuItems';
-import { Link, useLocation } from 'react-router-dom';
-import { FaRegUserCircle } from 'react-icons/fa';
-import { IoClose } from 'react-icons/io5';
+import { useUserContext } from '../../contexts/note/UserProvider';
 import { useNotesDispatchContext } from '../../contexts/note/NotesProvider';
 import { CLEAR_NOTES } from '../../contexts/note/actionTypes';
-import { useUserContext } from '../../contexts/note/UserProvider';
+import useOutsideFocus from '../../hooks/useOutsideFocus';
+import menuItems from '../../data/note/menuItems';
+
+import { FaRegUserCircle } from 'react-icons/fa';
+import { IoClose } from 'react-icons/io5';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Menu({ isMenuOpen, handleCloseMenu }) {
   const menuCN = isMenuOpen ? 'left-0 menu-shadow' : '-left-96 shadow-none';

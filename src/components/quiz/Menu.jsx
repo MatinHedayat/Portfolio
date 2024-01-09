@@ -1,19 +1,20 @@
-import { useRef } from 'react';
-import useTheme from '../../hooks/quiz/useTheme.js';
-import { Link, useNavigate } from 'react-router-dom';
-import { menu } from '../../data/quiz/menuItems.jsx';
-import useOutsideFocus from '../../hooks/quiz/useOutsideFocus.js';
-import { MdOutlineLightMode } from 'react-icons/md';
-import { MdNightlight } from 'react-icons/md';
-import { FaRegUserCircle } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
-import { IoClose } from 'react-icons/io5';
-import { BiTimer } from 'react-icons/bi';
-import { IoArrowBack } from 'react-icons/io5';
 import {
   changeBackBtn,
   changeTimer,
 } from '../../features/quiz/settingSlice.js';
+import useTheme from '../../hooks/quiz/useTheme.js';
+import useOutsideFocus from '../../hooks/useOutsideFocus.js';
+import { menu } from '../../data/quiz/menuItems.jsx';
+
+import { MdOutlineLightMode } from 'react-icons/md';
+import { MdNightlight } from 'react-icons/md';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { IoClose } from 'react-icons/io5';
+import { BiTimer } from 'react-icons/bi';
+import { IoArrowBack } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 export default function Menu({ isOpen, handleCloseMenu }) {
   const menuCN = isOpen ? 'top-0 shadow-2xl' : `-top-[25rem] shadow-none`;

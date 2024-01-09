@@ -1,14 +1,12 @@
 import Page from '../../components/quiz/Page';
+import { clearHistory } from '../../features/quiz/historySlice';
+import useTheme from '../../hooks/quiz/useTheme';
+
 import { RiDatabase2Fill } from 'react-icons/ri';
 import { MdHistory } from 'react-icons/md';
 import { RxReset } from 'react-icons/rx';
 import { IoIosHelpCircle } from 'react-icons/io';
-import { clearHistory } from '../../features/quiz/historySlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearMatchData } from '../../features/quiz/matchDataSlice';
-import { resetSetting } from '../../features/quiz/settingSlice';
-import { logoutCharacter } from '../../features/quiz/characterSlice';
-import useTheme from '../../hooks/quiz/useTheme';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function Storage() {
@@ -17,13 +15,8 @@ export default function Storage() {
   const navigate = useNavigate();
 
   const handleResetGame = () => {
-    // dispatch(clearMatchData());
-    // dispatch(clearHistory());
-    // dispatch(resetSetting());
-    // dispatch(logoutCharacter());
-    // setTheme('light');
     localStorage.clear();
-    navigate('/');
+    navigate('/launcher');
   };
 
   return (

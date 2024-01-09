@@ -1,17 +1,17 @@
-import { useRef, useState } from 'react';
-import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
-import { useNotesDispatchContext } from '../../projects/NoteApp/src/contexts/NotesProvider';
+import useOutsideFocus from '../../hooks/useOutsideFocus';
+import { useNotesDispatchContext } from '../../contexts/note/NotesProvider';
 import {
   DELETE_NOTE,
-  EDIT_NOTE,
   UPDATE_NOTE,
-} from '../../projects/NoteApp/src/contexts/actionTypes';
+} from '../../contexts/note/actionTypes';
+
+import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
 import { BsThreeDotsVertical } from 'react-icons/bs';
-import useOutsideFocus from '../../projects/NoteApp/src/hooks/useOutsideFocus';
 import { FiEdit3 } from 'react-icons/fi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { LiaInfoCircleSolid } from 'react-icons/lia';
 import { useNavigate } from 'react-router-dom';
+import { useRef, useState } from 'react';
 
 export default function NoteItem({ note }) {
   const navigate = useNavigate();
@@ -128,17 +128,17 @@ export default function NoteItem({ note }) {
         </button>
 
         <div className='bg-slate-100/30 flex gap-2 px-3 py-1.5 rounded-lg sm:px-4 sm:py-2 sm:gap-4'>
-          <span className='text-[0.7rem] font-medium text-black/80 sm:text-sm sm:font-semibold'>
+          <span className='text-xs font-semibold text-black/80 sm:text-sm'>
             {new Date(note.creationTime).toLocaleTimeString('en-US')}
           </span>
 
-          <span className='text-[0.7rem] font-medium text-black/80 sm:text-sm sm:font-semibold sm:hidden'>
+          <span className='text-xs font-semibold text-black/80 sm:text-sm sm:hidden'>
             {new Date(note.creationTime).toLocaleDateString('en-US', {
               day: 'numeric',
               month: 'long',
             })}
           </span>
-          <span className='text-[0.7rem] hidden font-medium text-black/80 sm:text-sm sm:font-semibold sm:inline'>
+          <span className='text-xs hidden font-semibold text-black/80 sm:text-sm sm:inline'>
             {new Date(note.creationTime).toLocaleDateString('en-US', {
               day: 'numeric',
               month: 'long',

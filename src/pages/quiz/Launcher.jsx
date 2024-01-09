@@ -17,7 +17,7 @@ export default function Launcher() {
         alt='logo'
       />
 
-      <div className='w-max max-w-60 text-center absolute bottom-36 inset-x-1/2 -translate-x-1/2'>
+      <div className='w-max max-w-60 font-outfit text-center absolute bottom-36 inset-x-1/2 -translate-x-1/2'>
         <h1 className='text-gray-800 dark:text-gray-300'>
           <span className='text-6xl font-black'>Q.G</span>
           <span className='text-3xl font-bold'> Game</span>

@@ -1,4 +1,5 @@
 import Page from '../../components/quiz/Page';
+
 import { BiCategoryAlt } from 'react-icons/bi';
 import { PiStepsFill } from 'react-icons/pi';
 import { MdOutlineGamepad } from 'react-icons/md';
@@ -32,8 +33,6 @@ export default function History() {
     e.stopPropagation();
     dispatch(removeHistory(item));
   };
-
-  const [infoItem, setInfoItem] = useState(null);
 
   const handleShowGameInfo = (infoItem) => {
     // setInfoItem(infoItem);

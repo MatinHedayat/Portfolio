@@ -1,10 +1,8 @@
-import { FaHistory } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { GrMultiple } from "react-icons/gr";
 import { IoBookmarks } from "react-icons/io5";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { MdOutlineDeleteSweep } from "react-icons/md";
-import { IoMdHelpCircleOutline } from "react-icons/io";
 
 export default [
   {
@@ -12,7 +10,7 @@ export default [
     icon: <GrMultiple />,
     miniSize: "md",
     size: "xl",
-    path: "/",
+    path: "/note-list",
     type: "link",
   },
   {

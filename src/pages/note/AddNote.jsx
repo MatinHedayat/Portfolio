@@ -1,14 +1,15 @@
+import backgrounds from '../../data/note/backgrounds';
+import Menu from '../../components/note/Menu';
+import { ADD_NOTE } from '../../contexts/note/actionTypes';
+import { useNotesDispatchContext } from '../../contexts/note/NotesProvider';
+
 import { useState } from 'react';
-import backgrounds from '../data/backgrounds';
-import { HiMenuAlt2 } from 'react-icons/hi';
-import Menu from '../components/Menu';
-import { FaCheck } from 'react-icons/fa6';
-import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
-import { useNotesDispatchContext } from '../contexts/NotesProvider';
-import { ADD_NOTE } from '../contexts/actionTypes';
 import { useNavigate } from 'react-router-dom';
-import { BiLeftArrowAlt } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import { HiMenuAlt2 } from 'react-icons/hi';
+import { FaCheck } from 'react-icons/fa6';
+import { BiLeftArrowAlt } from 'react-icons/bi';
+import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
 
 export default function AddNote() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +43,7 @@ export default function AddNote() {
 
   return (
     <motion.div
-      className='page'
+      className='note-page'
       initial={{ opacity: 0, y: '-10%' }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -80,7 +81,7 @@ export default function AddNote() {
         </h2>
 
         <div className='w-2/5 max-w-[260px]'>
-          <img src='images/create-note.png' alt='create-note' />
+          <img src='create-note.png' alt='create-note' />
         </div>
       </div>
 

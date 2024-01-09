@@ -1,17 +1,18 @@
 import Page from '../../components/quiz/Page';
 import useFetchData from '../../hooks/quiz/useFetchData';
 import numberList from '../../data/quiz/numberList';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ThreeDots } from 'react-loader-spinner';
-import { PiSelectionBackgroundBold } from 'react-icons/pi';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   changeBackBtn,
   changeDifficulties,
   changeNumberOfQuestions,
   changeTimer,
 } from '../../features/quiz/settingSlice';
+
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ThreeDots } from 'react-loader-spinner';
+import { PiSelectionBackgroundBold } from 'react-icons/pi';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Setting() {
   const { difficulties, numberOfQuestions, timer, backBtn } = useSelector(

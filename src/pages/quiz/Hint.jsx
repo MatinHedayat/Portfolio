@@ -3,7 +3,7 @@ import Page from '../../components/quiz/Page';
 export default function Hint() {
   return (
     <>
-      <Page title='Hint' backPage='/' nextPage='/categories'>
+      <Page title='Hint' backPage='/launcher' nextPage='/categories'>
         <div className='text-gray-800 dark:text-gray-200 max-h-[65%] pb-8 pr-4 overflow-auto'>
           <h3 className='text-2xl dark:text-gray-300 font-extrabold capitalize'>
             Welcome to the game

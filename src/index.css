@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -5,17 +7,17 @@
 
 @layer base {
   body {
-    @apply bg-slate-200 select-none dark:bg-slate-800 transition-colors;
-  }
-
-  button {
-    @apply outline-none;
+    @apply bg-cream dark:bg-slate-800 transition-colors;
   }
 }
 
 @layer components {
-  .page {
-    @apply bg-slate-200 max-w-4xl min-h-screen relative px-4 py-6 mx-auto overflow-hidden dark:bg-slate-800 transition-colors;
+  .note-page {
+    @apply max-w-4xl min-h-screen font-poppins relative px-4 py-6 mx-auto overflow-hidden;
+  }
+
+  .quiz-page {
+    @apply max-w-3xl h-screen font-outfit overflow-x-hidden px-6 pt-8 pb-20 mx-auto;
   }
 
   .plus-shadow {
@@ -24,18 +26,6 @@
 
   .menu-shadow {
     box-shadow: 2rem 1rem 3rem rgba(0, 0, 0, 0.2);
-  }
-}
-
-@layer base {
-  body {
-    @apply bg-cream dark:bg-gray-800 transition-colors;
-  }
-}
-
-@layer components {
-  .page {
-    @apply max-w-3xl h-screen overflow-x-hidden px-6 pt-8 pb-20 mx-auto;
   }
 }
 

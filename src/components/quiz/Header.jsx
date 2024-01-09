@@ -21,7 +21,9 @@ export default function Header({ title, setIsMenuOpen }) {
 
         <button
           className='w-7 h-7 flex overflow-hidden rounded-full'
-          onClick={() => navigate('/character')}
+          onClick={() => {
+            if (location.pathname !== '/questions') navigate('/character');
+          }}
         >
           {character.isLogin ? (
             <img className='w-full' src={character.avatar} alt='character' />

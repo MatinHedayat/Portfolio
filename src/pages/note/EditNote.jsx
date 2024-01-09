@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import backgrounds from '../data/backgrounds';
+import { EDIT_NOTE } from '../../contexts/note/actionTypes';
+import backgrounds from '../../data/note/backgrounds';
+import Menu from '../../components/note/Menu';
+import { useNotesDispatchContext } from '../../contexts/note/NotesProvider';
+
 import { HiMenuAlt2 } from 'react-icons/hi';
-import Menu from '../components/Menu';
 import { FaCheck } from 'react-icons/fa6';
 import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
-import { useNotesDispatchContext } from '../contexts/NotesProvider';
-import { EDIT_NOTE } from '../contexts/actionTypes';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { BiLeftArrowAlt } from 'react-icons/bi';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function EditNote() {
@@ -39,12 +40,12 @@ export default function EditNote() {
       },
     });
 
-    navigate('/');
+    navigate('/note-list');
   };
 
   return (
     <motion.div
-      className='page'
+      className='note-page'
       initial={{ opacity: 0, y: '-10%' }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -82,7 +83,7 @@ export default function EditNote() {
         </h2>
 
         <div className='w-2/5 max-w-[260px]'>
-          <img src='images/edit-note.png' alt='create-note' />
+          <img src='edit-note.png' alt='create-note' />
         </div>
       </div>
 

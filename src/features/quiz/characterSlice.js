@@ -14,8 +14,8 @@ const characterSlice = createSlice({
   reducers: {
     loginCharacter: (state, action) => action.payload,
     logoutCharacter: (state, action) => {
-      initialState;
       localStorage.removeItem('character');
+      return initialState;
     },
   },
 });
