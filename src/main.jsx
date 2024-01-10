@@ -4,16 +4,16 @@ import App from './App.jsx';
 import './index.css';
 
 import { BrowserRouter } from 'react-router-dom';
-import ContextProviders from './contexts/contextProviders.jsx';
+import NotesProviders from './contexts/NotesProviders.jsx';
 import { Provider } from 'react-redux';
 import { core } from './core.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={core}>
-    <ContextProviders>
+    <NotesProviders>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </ContextProviders>
+    </NotesProviders>
   </Provider>
 );
