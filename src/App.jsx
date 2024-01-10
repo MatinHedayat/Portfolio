@@ -1,3 +1,4 @@
+import Portfolio from './pages/portfolio/Portfolio';
 import {
   NoteList,
   AddNote,
@@ -18,11 +19,10 @@ import {
   History,
   Info,
 } from './pages/quiz/exporter';
-import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-
-import { useSelector } from 'react-redux';
 import useLocalStorage from './hooks/quiz/useLocalStorage';
+
+import { Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Portfolio />} />
 
         <Route path='/note-list' element={<NoteList />} />
         <Route path='/add-note' element={<AddNote />} />
