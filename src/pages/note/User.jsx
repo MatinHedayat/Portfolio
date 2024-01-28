@@ -85,7 +85,7 @@ export default function User() {
             className='bg-slate-400/50 text-slate-800 font-semibold placeholder-slate-800/80 px-4 py-3 border-4 border-slate-600 outline-none rounded-3xl shadow-xl sm:w-1/2'
             type='text'
             value={name}
-            placeholder='Enter your name ...'
+            placeholder='Enter your first name ...'
             onChange={(e) => setName(e.target.value)}
           />
 
@@ -93,7 +93,7 @@ export default function User() {
             className='bg-slate-400/50 text-slate-800 font-semibold placeholder-slate-800/80 px-4 py-3 border-4 border-slate-600 outline-none rounded-3xl shadow-xl sm:w-1/2'
             type='text'
             value={family}
-            placeholder='Enter your family ...'
+            placeholder='Enter your last name ...'
             onChange={(e) => setFamily(e.target.value)}
           />
         </div>

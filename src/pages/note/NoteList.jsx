@@ -40,7 +40,7 @@ export default function NoteList() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className='bg-slate-700 font-poppins h-16 flex items-center justify-between rounded-2xl overflow-hidden'>
+        <div className='bg-slate-700 font-poppins h-16 px-1 flex items-center justify-between rounded-2xl overflow-hidden'>
           <button
             className='w-12 h-full flex items-center justify-center ml-2 sm:ml-4'
             onClick={() => setIsMenuOpen(true)}

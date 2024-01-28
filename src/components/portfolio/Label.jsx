@@ -1,7 +1,17 @@
-export default function Label({ title }) {
+export default function Label({ title, align }) {
   return (
-    <h3 className='bg-sky-600 text-white/90 w-32 text-center font-medium py-2 mb-8 rounded-l-md rounded-r-2xl shadow-xl'>
-      {title}
-    </h3>
+    <div
+      className={`flex mb-12 ${
+        align === 'right' ? 'justify-end' : 'justify-start'
+      }`}
+    >
+      <h3
+        className={`bg-sky-600 text-white w-40 text-center text-xl font-semibold py-3 rounded-md shadow-xl ${
+          align === 'right' ? 'rounded-l-2xl' : 'rounded-r-2xl'
+        }`}
+      >
+        {title}
+      </h3>
+    </div>
   );
 }

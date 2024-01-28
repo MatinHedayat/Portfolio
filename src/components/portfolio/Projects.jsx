@@ -17,7 +17,7 @@ export default function Projects() {
             key={item.title}
           >
             <div className='w-full h-40 relative'>
-              <p className='bg-black/50 px-3 py-1 absolute top-4 left-4 backdrop-blur-sm rounded-xl'>
+              <p className='bg-black/60 px-3 py-1 absolute top-5 left-5 backdrop-blur-sm rounded-xl'>
                 {item.title}
               </p>
               <img
@@ -27,10 +27,10 @@ export default function Projects() {
               />
             </div>
 
-            <div className='h-full flex flex-col justify-between p-4'>
+            <div className='h-full flex flex-col justify-between p-5'>
               <p>{item.desc}</p>
 
-              <div className='flex gap-x-4 mt-8'>
+              <div className='flex gap-x-4 mt-10'>
                 <Link to={item.link} target='_blank'>
                   <button className='bg-gray-800 px-4 py-2 flex items-center gap-x-3 rounded-lg'>
                     <FaRegEye />

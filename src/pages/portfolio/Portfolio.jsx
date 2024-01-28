@@ -3,12 +3,13 @@ import Description from '../../components/portfolio/Description';
 import Skills from '../../components/portfolio/Skills';
 import Projects from '../../components/portfolio/Projects';
 import Information from '../../components/portfolio/Information';
+import { FaCopyright } from 'react-icons/fa';
 
 export default function Portfolio() {
   return (
     <>
       <div className='bg-gray-800 w-full'>
-        <div className='max-w-4xl relative flex flex-col gap-y-28 font-outfit px-6 py-20 pb-40 mx-auto overflow-x-hidden'>
+        <div className='max-w-4xl relative flex flex-col gap-y-28 font-outfit px-6 py-20 pb-48 mx-auto overflow-x-hidden'>
           <Title />
           <Description />
           <Skills />
@@ -16,10 +17,14 @@ export default function Portfolio() {
           <Information />
 
           <div className='absolute bottom-0 inset-x-0 md:opacity-0'>
+            <p className='font-semibold text-gray-900 absolute bottom-8 left-8 flex items-center gap-x-2'>
+              <FaCopyright /> 2024 Matko
+            </p>
+
             <svg
               className='fill-sky-500'
               xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 1440 320'
+              viewBox='0 0 800 320'
             >
               <path
                 fillOpacity='1'

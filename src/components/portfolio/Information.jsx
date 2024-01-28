@@ -1,11 +1,20 @@
 import { Link } from 'react-router-dom';
 import { primitives, social } from '../../data/portfolio/info.jsx';
 import Label from './Label.jsx';
+import { TbStars } from 'react-icons/tb';
+import { GrStatusGoodSmall } from 'react-icons/gr';
+import { TbPointerStar } from "react-icons/tb";
+import { FaShieldAlt } from "react-icons/fa";
 
 export default function Information() {
   return (
     <div>
-      <Label title='Information' />
+      <Label title='Information' align='right' />
+
+      <h3 className='bg-gray-700 w-max text-white text-lg font-medium tracking-widest flex items-center gap-x-4 px-8 py-2.5 mb-6 mt-16 rounded-xl shadow-xl'>
+      <FaShieldAlt />
+        Personal
+      </h3>
 
       <div className='flex flex-wrap gap-3'>
         {primitives.map((item) => (
@@ -19,12 +28,18 @@ export default function Information() {
               {item.title}
             </span>
 
-            <span>{item.value}</span>
+            <span className='sm:text-lg sm:px-2'>{item.value}</span>
           </div>
         ))}
       </div>
 
-      <div className='flex flex-wrap gap-3 mt-12'>
+      <h3 className='bg-gray-700 w-max text-white text-lg font-medium tracking-widest flex items-center gap-x-4 px-8 py-2.5 mb-6 mt-16 rounded-xl shadow-xl'>
+        <GrStatusGoodSmall className='relative'></GrStatusGoodSmall>
+        <div className='absolute w-4 h-4 ml-[0.08rem] rounded-full outline outline-2 animate-ping'></div>
+        Connection
+      </h3>
+
+      <div className='flex flex-wrap gap-3'>
         {social.map((item) => {
           if (item.path) {
             return (
@@ -34,7 +49,7 @@ export default function Information() {
                     {item.title}
                   </span>
 
-                  <span>{item.value}</span>
+                  <span className='sm:text-lg sm:px-2'>{item.value}</span>
                 </div>
               </Link>
             );
@@ -48,7 +63,7 @@ export default function Information() {
                   {item.title}
                 </span>
 
-                <span>{item.value}</span>
+                <span className='sm:text-lg sm:px-2'>{item.value}</span>
               </div>
             );
           }
