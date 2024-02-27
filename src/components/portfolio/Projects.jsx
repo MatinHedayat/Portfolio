@@ -7,13 +7,13 @@ import Label from './Label';
 
 export default function Projects() {
   return (
-    <div>
-      <Label title='Projects' />
+    <div className='section-pm' id='Projects'>
+      <Label title='Projects' align='right' />
 
-      <div className='flex flex-col gap-8 sm:flex-row sm:flex-wrap'>
+      <div className='flex flex-col gap-8 md:flex-row md:flex-wrap'>
         {projects.map((item) => (
           <div
-            className='bg-gray-700 text-white/80 flex flex-col overflow-hidden rounded-2xl shadow-xl sm:w-[45%]'
+            className='bg-slate-700 text-white/80 flex flex-col overflow-hidden border border-slate-500 rounded-2xl shadow-xl md:w-[45%]'
             key={item.title}
           >
             <div className='w-full h-40 relative'>
@@ -28,7 +28,7 @@ export default function Projects() {
             </div>
 
             <div className='h-full flex flex-col justify-between p-5'>
-              <p>{item.desc}</p>
+              <p className='text-slate-300 text-[0.95rem]/5'>{item.desc}</p>
 
               <div className='flex gap-x-4 mt-10'>
                 <Link to={item.link} target='_blank'>

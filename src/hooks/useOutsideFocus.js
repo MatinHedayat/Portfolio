@@ -7,6 +7,7 @@ export default function useOutsideFocus(ref, cdFunc) {
       e.key === 'Escape' ||
       e.type === 'scroll'
     ) {
+      console.log(e.target);
       cdFunc();
     }
   };

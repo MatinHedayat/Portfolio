@@ -6,6 +6,7 @@ export default {
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       outfit: ['Outfit', 'sans-serif'],
+      true: ['True Lies', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -28,6 +29,7 @@ export default {
       animation: {
         rotateOpacity: 'rotateOpacity 0.3s ease-in-out 1',
         opacity: 'opacity 0.2s ease-in-out 1',
+        spin: 'spin 20s linear infinite',
       },
     },
   },

@@ -10,7 +10,7 @@ export default function BackToTopBtn() {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      window.scrollY > 100 ? setIsBtnShow(true) : setIsBtnShow(false);
+      window.scrollY > 200 ? setIsBtnShow(true) : setIsBtnShow(false);
     });
   }, []);
 

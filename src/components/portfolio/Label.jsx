@@ -6,7 +6,7 @@ export default function Label({ title, align }) {
       }`}
     >
       <h3
-        className={`bg-sky-600 text-white w-40 text-center text-xl font-semibold py-3 rounded-md shadow-xl ${
+        className={`gray-gr-br text-slate-200 w-36 text-center tracking-wider font-semibold py-3 rounded-md shadow-xl ${
           align === 'right' ? 'rounded-l-2xl' : 'rounded-r-2xl'
         }`}
       >

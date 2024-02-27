@@ -1,73 +1,54 @@
-import { Link } from 'react-router-dom';
-import { primitives, social } from '../../data/portfolio/info.jsx';
-import Label from './Label.jsx';
-import { TbStars } from 'react-icons/tb';
-import { GrStatusGoodSmall } from 'react-icons/gr';
-import { TbPointerStar } from "react-icons/tb";
-import { FaShieldAlt } from "react-icons/fa";
+import { useRef, useState } from 'react';
+import info from '../../data/portfolio/info.jsx';
+import useOutsideClick from '../../hooks/useOutsideClick.js';
+import { HiOutlineCursorClick } from 'react-icons/hi';
 
 export default function Information() {
+  const [infoId, setInfoId] = useState(null);
+
+  const handleClickButton = (item) => {
+    if (item.path) window.open(item.path, '_blank');
+    else setInfoId(item.id);
+  };
+
+  const infoRef = useRef();
+  useOutsideClick(infoRef, 'info', () => setInfoId(null));
+
   return (
-    <div>
-      <Label title='Information' align='right' />
-
-      <h3 className='bg-gray-700 w-max text-white text-lg font-medium tracking-widest flex items-center gap-x-4 px-8 py-2.5 mb-6 mt-16 rounded-xl shadow-xl'>
-      <FaShieldAlt />
-        Personal
-      </h3>
-
-      <div className='flex flex-wrap gap-3'>
-        {primitives.map((item) => (
-          <div
-            className='text-white/80 w-max h-12 p-1 pr-3 flex items-center gap-x-4 border-2 border-gray-600 rounded-xl shadow-xl'
-            key={item.id}
-          >
-            <span
-              className={`h-full ${item.iconSize} flex items-center px-4 bg-gray-700 rounded-lg`}
-            >
-              {item.title}
-            </span>
-
-            <span className='sm:text-lg sm:px-2'>{item.value}</span>
-          </div>
-        ))}
+    <div className='mt-8 mb-10 sm:mb-16'>
+      <div className='text-[0.8rem] text-slate-400 border-l-2 border-slate-400 pl-2'>
+        <p className='text-slate-300/80 capitalize'>Welcome to my portfolio</p>
+        <p className='flex items-center gap-x-1.5'>
+          <HiOutlineCursorClick className='text-base' />
+          Press any of the buttons to see the info
+        </p>
       </div>
 
-      <h3 className='bg-gray-700 w-max text-white text-lg font-medium tracking-widest flex items-center gap-x-4 px-8 py-2.5 mb-6 mt-16 rounded-xl shadow-xl'>
-        <GrStatusGoodSmall className='relative'></GrStatusGoodSmall>
-        <div className='absolute w-4 h-4 ml-[0.08rem] rounded-full outline outline-2 animate-ping'></div>
-        Connection
-      </h3>
+      <div className='w-max flex flex-wrap gap-3 mt-6 relative' ref={infoRef}>
+        {info.map((item) => (
+          <button
+            className='w-10 h-10 flex items-center justify-center rounded-xl gray-gr-br shadow-xl'
+            key={item.id}
+            onClick={() => handleClickButton(item)}
+          >
+            <span className={`text-slate-300/90 text-lg`}>{item.icon}</span>
 
-      <div className='flex flex-wrap gap-3'>
-        {social.map((item) => {
-          if (item.path) {
-            return (
-              <Link to={item.path} target='_blank' key={item.id}>
-                <div className='text-white/80 w-max h-12 p-1 pr-4 flex items-center gap-x-4 border-2 border-gray-600 rounded-xl shadow-xl'>
-                  <span className='h-full text-xl flex items-center px-4 bg-gray-700 rounded-lg'>
-                    {item.title}
-                  </span>
-
-                  <span className='sm:text-lg sm:px-2'>{item.value}</span>
-                </div>
-              </Link>
-            );
-          } else {
-            return (
-              <div
-                className='text-white/80 w-max h-12 p-1 pr-4 flex items-center gap-x-4 border-2 border-gray-600 rounded-xl shadow-xl'
-                key={item.id}
-              >
-                <span className='h-full flex items-center px-4 bg-gray-700 rounded-lg'>
-                  {item.title}
-                </span>
-
-                <span className='sm:text-lg sm:px-2'>{item.value}</span>
-              </div>
-            );
-          }
-        })}
+            <span
+              className={`bg-gradient-to-bl from-slate-800/80 to-slate-700/40 text-slate-300 text-sm w-max font-medium absolute z-30 top-14 px-4 py-2 select-text cursor-text border border-slate-600 rounded-2xl shadow-xl transition-all duration-300 ${
+                item.id === infoId
+                  ? 'delay-200 translate-y-0 scale-100 opacity-100 visible'
+                  : '-translate-y-4 scale-75 opacity-0 invisible'
+              }`}
+              id='info'
+            >
+              <span
+                className='w-0 h-0 absolute -top-[0.4rem] inset-x-1/2 -translate-x-[50%] border-x-[6px] border-x-transparent
+                  border-b-[6px] border-b-slate-600'
+              ></span>
+              {item.value}
+            </span>
+          </button>
+        ))}
       </div>
     </div>
   );
