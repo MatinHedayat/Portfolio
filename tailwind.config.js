@@ -25,11 +25,16 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        show: {
+          '0%': { opacity: 0, transform: 'translateX(-2rem)' },
+          '100%': { opacity: 100, transform: 'translateX(0)' },
+        },
       },
       animation: {
         rotateOpacity: 'rotateOpacity 0.3s ease-in-out 1',
         opacity: 'opacity 0.2s ease-in-out 1',
         spin: 'spin 20s linear infinite',
+        show: 'show 0.3s ease-in-out 1',
       },
     },
   },

@@ -6,6 +6,13 @@ export default [
     githubLink: 'https://github.com/MatinHedayat/Quiz-Game',
     link: '/launcher',
   },
+    {
+    img: 'rick.jpg',
+    title: 'Rick & Morty',
+    desc: 'With this app you can see detail of every single character of this animation, search and filter characters and add the characters you like to your favorite list and much more ...',
+    githubLink: 'https://github.com/MatinHedayat/Rick-Morty',
+    link: '/characters',
+  },
   {
     img: 'back.jpg',
     title: 'Weather App',

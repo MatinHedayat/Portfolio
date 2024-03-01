@@ -28,6 +28,9 @@ export default function Projects() {
             </div>
 
             <div className='h-full flex flex-col justify-between p-5'>
+              <p className='w-max text-[0.8rem] px-2 py-0.5 mb-2 bg-slate-500/80 rounded-lg shadow-xl'>
+                Description
+              </p>
               <p className='text-slate-300 text-[0.95rem]/5'>{item.desc}</p>
 
               <div className='flex gap-x-4 mt-10'>
